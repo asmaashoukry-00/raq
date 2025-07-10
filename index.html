@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>رقميون</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-2+nS1YzRVwQCBXK+ULBv8Tr5xY9doEdIEZBf7oYNSDEjZj5p2YH4QO0mykEPK+IrpeEwJexs2aYqkXxMiP+4Iw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="./imgs/favicon.png">
+  </head>
+  <style>
+    .theme-bg {
+      background: linear-gradient(135deg, #35155d 0%, #5e2a8c 100%);
+    }
+
+    .logo {
+      width: 150px;
+      height: auto;
+    }
+
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .social-icon:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .social-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: white;
+    }
+
+    .theme-text {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .marquee-container {
+      overflow: hidden;
+      white-space: nowrap;
+      /* width: 200%; */
+    }
+
+    .marquee-track {
+      display: flex;
+      animation: scroll 50s linear infinite normal;
+      width: fit-content;
+      /* animation-fill-mode: forwards; */
+
+
+    }
+
+  /* .marquee-track:hover {
+      animation-play-state: paused;
+    } */
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(100%);
+      }
+
+      300% {
+        transform: translateX(-1%);
+      }
+    }
+
+    .client-logo {
+      flex-shrink: 0;
+      width: 256px;
+      height: 192px;
+      margin: 0 12px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .client-logo img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .marquee-track::after {
+      content: '';
+      display: inline;
+      width: 100%;
+    }
+
+    /* الحركة المستمرة */
+    @keyframes marquee {
+      0% {
+        transform: translateX(0%);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .animate-marquee {
+      display: flex;
+      animation: marquee 300s linear infinite;
+    }
+
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+
+    .animate-marquee:active {
+      animation-play-state: paused;
+    }
+
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .beg-video {
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar fixed top-0 w-full z-50 text-white py-4">
+    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+      <img src="./imgs/logo.png" alt="Raqamyon Logo" class="h-12" />
+      <div class="flex items-center">
+        <div class="nav-links space-x-8 space-x-reverse hidden md:flex">
+          <a href="#video-content" class="text-lg font-semibold hover:text-gray-300 mr-8">الرئيسية</a>
+          <a href="#home" class="text-lg font-semibold hover:text-gray-300">ابدأ الآن</a>
+          <a href="#why" class="text-lg font-semibold hover:text-gray-300">لماذا نحن</a>
+          <a href="#services" class="text-lg font-semibold hover:text-gray-300">خدماتنا</a>
+          <a href="#clients" class="text-lg font-semibold hover:text-gray-300">عملاؤنا</a>
+          <a href="#videos" class="text-lg font-semibold hover:text-gray-300">أعمالنا</a>
+          <a href="#lead-form" class="text-lg font-semibold hover:text-gray-300">تواصل معنا</a>
+        </div>
+        <div class="menu-toggle md:hidden" onclick="toggleMenu()">☰</div>
+      </div>
+    </div>
+  </nav>
+  <!-- Video Section -->
+  <section id="video-content" class="py-20 px-4 bg-gray-100 relative min-h-screen">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between h-full">
+      <div class="w-full md:w-1/2 md:order-first mb-8 md:mb-0 md:pr-16 text-center md:text-right">
+        <!-- <h2 id="video-headline" class="text-3xl md:text-4xl font-bold mb-6 headline theme-text"></h2> -->
+         <h2 class="text-3xl md:text-4xl font-bold mb-6  theme-text"
+         >شركات جت بعدكم وتعدتكم؟ الزبدة بالتسويق.</h2>
+        <p class="text-lg md:text-xl text-gray-600 leading-relaxed">
+          نخلي منتجك يوصل للناس اللي تشتري, مو بس تشوف.
+        </p>
+      </div>
+      <div class="w-full md:w-1/2 md:order-last h-full mobile-center">
+        <div class="video-container">
+          <video class="beg-video w-full h-full rounded-lg shadow-lg" controls>
+            <source src="./imgs/رقميون 5 b.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Hero Section -->
+  <!-- <section id="home" class="relative h-screen flex items-center justify-center text-center theme-bg text-white pt-20">
+    <video class="hero-video" autoplay muted loop>
+      <source src="https://cdn.pixabay.com/video/2024/10/16/234468_large.mp4" type="video/mp4" />
+    </video>
+    <div class="relative z-10 px-4 max-w-4xl mx-auto">
+      <h1 id="headline" class="text-4xl md:text-6xl font-bold mb-6 headline"></h1>
+      <p class="text-lg md:text-2xl mb-8 leading-relaxed">
+        منتجك يستاهل يوصل للناس — بس مو كل منتج يوصل لحاله.<br />إحنا نساعدك
+        تبيع، وتستعيد مكانك في السوق.
+      </p>
+      <a href="#lead-form" class="inline-block cta-button text-white text-lg font-semibold">كفايه عشوائية، خلونا
+        نبدأ</a>
+    </div>
+  </section> -->
+
+
+
+  <!-- Why Us Section -->
+  <section id="why" class="py-20 px-4 bg-white">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 theme-text section-title">
+        ليش غيركم أفضل رغم إن منتجكم أحسن؟
+      </h2>
+      <p class="text-lg mb-10 max-w-3xl mx-auto text-e2e8f0">
+        المشكلة مو بمنتجك، المشكلة بالتسويق. وحنا هنا نحلّها.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="p-6 bg-gray-50 bg-opacity-20 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold mb-2 text-e2e8f0">
+            تسويقك مو واضح؟
+          </h3>
+          <p class="text-gray-600">
+            نصمم استراتيجيات واضحة توصل رسالتك للجمهور.
+          </p>
+        </div>
+        <div class="p-6 bg-gray-50 bg-opacity-20 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold mb-2 text-e2e8f0">
+            جمهورك ما يعرفك؟
+          </h3>
+          <p class="text-gray-600">نستهدف جمهورك بدقة ونخلّيهم يعرفونك.</p>
+        </div>
+        <div class="p-6 bg-gray-50 bg-opacity-20 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold mb-2 text-e2e8f0">
+            محتواك ما يشد؟
+          </h3>
+          <p class="text-gray-600">نصنع محتوى يجذب ويحوّل الزوار لعملاء.</p>
+        </div>
+        <div class="p-6 bg-gray-50 bg-opacity-20 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold mb-2 text-e2e8f0">
+            شركات أقل سبقتك؟
+          </h3>
+          <p class="text-gray-600">
+            نساعدك تتفوق بتسويق احترافي يعكس قيمة منتجك.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20 px-4 bg-gray-100">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 theme-text section-title">
+        وش نقدم لك؟
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="card">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">حملة تسويقية كاملة</h3>
+            <p class="text-gray-600">
+              شعار إبداعي + فكرة رئيسية<br />نصوص + تصاميم + فيديوهات احترافية
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">
+              محتوى سوشال يفتح الشهية
+            </h3>
+            <p class="text-gray-600">
+              تنظيم محتواك<br />منشورات تبيع وتتكلم بلغة جمهورك
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">تصوير فيديوهات منتج</h3>
+            <p class="text-gray-600">
+              سناب؟ إنستا؟ ريلز؟<br />نسويها كلها بإبداع
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">جلسة تحليل استراتيجي</h3>
+            <p class="text-gray-600">
+              نحلل مشكلتك، ونقولك وش الحل<br />بداية مجانية حتى لو ما اشتغلت
+              معنا
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section id="why-choose-us" class="py-20 px-4 bg-white">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 theme-text section-title">
+        وش يخليك معنا؟
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold mb-2">نشتغل كأنه مشروعنا</h3>
+          <p class="text-gray-600">نحط قلبنا وروحنا في كل حملة.</p>
+        </div>
+        <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold mb-2">نفهم جمهورك</h3>
+          <p class="text-gray-600">نسوّق لجمهورك بطريقة تلمسهم.</p>
+        </div>
+        <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold mb-2">أسلوب واضح وجريء</h3>
+          <p class="text-gray-600">نتكلم بلغة قريبة من الناس.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Logos Section -->
+  <section id="clients" class="py-20 px-4 bg-gray-100">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 theme-text section-title">
+       من عملائنا 
+      </h2>
+      <div class="overflow-hidden bg-white rounded-2xl shadow-lg mb-8 p-4">
+        <div class="marquee-container">
+          <div class="marquee-track">
+            <!-- المجموعة الأولى -->
+            <div class="client-logo">
+              <img src="./imgs/الشماسي.png" alt="الشماسي" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/ارابيكا.png" alt="ارابيكا" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/دوفت.png" alt="دوفت" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/رمانة.png" alt="رمانة" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/كانف.png" alt="كانف" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/مضياف.png" alt="مضياف" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/مفارش-العييري.png" alt="العييري" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/شاي-سليمان.png" alt="سليمان" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/كشته.png" alt="كشته" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/ديل-برجر.png" alt="ديل برجر" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/استر.png" alt="استر" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/دايز.png" alt="دايز" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/السويد (2).png" alt="السويد" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/فطيرة-الفلافل.png" alt="فطيرة الفلافل" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/ناهس.png" alt="ناهس" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/العليان.png" alt="العليان" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/وزارة-التعليم.png" alt="وزارة التعليم" />
+            </div>
+            <!-- المجموعة الأولى -->
+            <div class="client-logo">
+              <img src="./imgs/الشماسي.png" alt="الشماسي" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/ارابيكا.png" alt="ارابيكا" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/دوفت.png" alt="دوفت" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/رمانة.png" alt="رمانة" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/كانف.png" alt="كانف" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/مضياف.png" alt="مضياف" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/مفارش-العييري.png" alt="العييري" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/شاي-سليمان.png" alt="سليمان" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/كشته.png" alt="كشته" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/ديل-برجر.png" alt="ديل برجر" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/استر.png" alt="استر" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/دايز.png" alt="دايز" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/السويد (2).png" alt="السويد" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/فطيرة-الفلافل.png" alt="فطيرة الفلافل" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/ناهس.png" alt="ناهس" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/العليان.png" alt="العليان" />
+            </div>
+            <div class="client-logo">
+              <img src="./imgs/وزارة-التعليم.png" alt="وزارة التعليم" />
+            </div>
+
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- Videos Section -->
+  <section id="videos" class="py-20 px-4 bg-white">
+    <div class="max-we-7xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 theme-text section-title">
+        أعمالنا المميزة
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Video 1 -->
+        <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden">
+          <div class="aspect-video bg-gray-200 flex items-center justify-center">
+            <video class="w-full h-full object-cover" controls autoplay loop muted controls poster="./imgs/العليان.png">
+              <source src="./imgs/فديو1-العليان.mp4" type="video/mp4" />
+              المتصفح لا يدعم عرض الفيديو
+            </video>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">من أعمالنا للعليان</h3>
+            <!-- <p class="text-gray-600"></p> -->
+          </div>
+        </div>
+        <!-- Video 2 -->
+        <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden">
+          <div class="aspect-video bg-gray-200 flex items-center justify-center">
+            <video class="w-full h-full object-cover" controls autoplay loop muted controls poster="./imgs/ارابيكا.png">
+              <source src="./imgs/فديو2-ارابيكا.mp4" type="video/mp4" />
+              المتصفح لا يدعم عرض الفيديو
+            </video>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">من أعمالنا لارابيكا</h3>
+            <!-- <p class="text-gray-600">وصف مختصر عن المشروع والخدمة المقدمة</p> -->
+          </div>
+        </div>
+        <!-- Video 3 -->
+        <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden">
+          <div class="aspect-video bg-gray-200 flex items-center justify-center">
+            <video class="w-full h-full object-cover" controls autoplay loop muted controls poster="./imgs/السويد (2).png">
+              <source src="./imgs/فديو3-السويد.mp4" type="video/mp4" />
+              المتصفح لا يدعم عرض الفيديو
+            </video>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">من أعمالنا للسويد</h3>
+            <!-- <p class="text-gray-600">وصف مختصر عن المشروع والخدمة المقدمة</p> -->
+          </div>
+        </div>
+        <!-- Video 4 -->
+        <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden">
+          <div class="aspect-video bg-gray-200 flex items-center justify-center">
+            <video class="w-full h-full object-cover" controls autoplay loop muted controls poster="./imgs/دوفت.png">
+              <source src="./imgs/فديو4-دوفت.mp4" type="video/mp4" />
+              المتصفح لا يدعم عرض الفيديو
+            </video>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">من أعمالنا لدوڤت</h3>
+            <!-- <p class="text-gray-600">وصف مختصر عن المشروع والخدمة المقدمة</p> -->
+          </div>
+        </div>
+        <!-- Video 5 -->
+        <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden">
+          <div class="aspect-video bg-gray-200 flex items-center justify-center">
+            <video class="w-full h-full object-cover" controls autoplay loop muted controls poster="./imgs/كشته.png">
+              <source src="./imgs/فديو5-كشته.mp4" type="video/mp4" />
+              المتصفح لا يدعم عرض الفيديو
+            </video>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">من أعمالنا لكشته</h3>
+            <!-- <p class="text-gray-600">وصف مختصر عن المشروع والخدمة المقدمة</p> -->
+          </div>
+        </div>
+        <!-- Video 6 -->
+        <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden">
+          <div class="aspect-video bg-gray-200 flex items-center justify-center">
+            <video class="w-full h-full object-cover" controls autoplay loop muted controls poster="./imgs/السلطان.png">
+              <source src="./imgs/فديو6-السلطان.mp4" type="video/mp4" />
+              المتصفح لا يدعم عرض الفيديو
+            </video>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">من أعمالنا للسلطان</h3>
+            <!-- <p class="text-gray-600">وصف مختصر عن المشروع والخدمة المقدمة</p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="lead-form" class="py-20 px-4 bg-gray-100">
+    <div class="max-w-lg mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 theme-text section-title">
+        خذ أول خطوة اليوم
+      </h2>
+      <p class="text-lg mb-8 max-w-2xl mx-auto">
+        لا تنتظر لين السوق ينساك. ابدأ معنا، وخلي منتجك يبيع زي ما يستاهل.
+      </p>
+      <div class="form-container">
+        <input type="text" placeholder="الاسم الكامل" class="w-full p-4 mb-4 rounded-lg" required />
+        <input type="tel" placeholder="رقم الهاتف" class="w-full p-4 mb-4 rounded-lg" required />
+        <input type="email" placeholder="البريد الإلكتروني" class="w-full p-4 mb-4 rounded-lg" required />
+        <select class="w-full p-4 mb-4 rounded-lg" required>
+          <option value="" disabled selected>نوع العمل</option>
+          <option value="ecommerce">التجارة الإلكترونية</option>
+          <option value="services">الخدمات</option>
+          <option value="other">أخرى</option>
+        </select>
+        <a href="https://wa.me/966547200939"><button class="w-full text-white px-8 py-4 rounded-lg text-lg font-semibold" >
+          احجز مكالمتك المجانية الآن
+        </button></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="sticky-cta">
+    <a href="https://wa.me/966547200939" class="cta-button text-white px-6 py-3 rounded-lg text-lg font-semibold">احجز مكالمتك
+      المجانية</a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-12 px-4 theme-bg text-white text-center">
+    <div class="max-w-7xl mx-auto">
+      <img src="./imgs/logo.png" alt="Raqamyon Logo" class="logo mx-auto mb-6" />
+      <p class="mb-6">اتصل بنا: 
+ Info@Raqmyon.com | 966547200939</p>
+
+      <div class="flex justify-center items-center gap-4 mb-4">
+        <a href="https://wa.me/966547200939" target="_blank" class="social-icon group">
+          <svg viewBox="0 0 24 24" class="group-hover:scale-110 transition-transform">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.864 3.687" />
+          </svg>
+        </a>
+
+        <a href="https://x.com/Raqmyon_sa?t=AgnRDUhZjm_6K9jyBWGrTg&s=09" target="_blank" class="social-icon group">
+          <svg viewBox="0 0 24 24" class="group-hover:scale-110 transition-transform" fill="currentColor">
+            <path
+              d="M22.25 2H1.75v20h20.5V2zM17.09 7.24l-4.11 4.93 4.23 4.59h-2.4l-3.32-3.59-3.8 3.59H5.5l5.12-4.83L5.75 7.24h2.4l2.91 3.15 3.32-3.15h2.71z" />
+          </svg>
+        </a>
+
+        <a href="https://www.tiktok.com/@raqmyon_sa?_t=ZS-8xnsMhskYcx&_r=1" target="_blank" class="social-icon group">
+          <svg viewBox="0 0 48 48" class="group-hover:scale-110 transition-transform" fill="currentColor">
+            <path
+              d="M41,15.1c-3,0-5.5-2.5-5.5-5.5V6h-5.3v23.3c0,3.7-3,6.7-6.7,6.7S16.8,33,16.8,29.3s3-6.7,6.7-6.7c0.5,0,1,0.1,1.5,0.2V17
+      c-0.5-0.1-1-0.1-1.5-0.1c-6.8,0-12.3,5.5-12.3,12.3S16.7,41.5,23.5,41.5S35.8,36,35.8,29.3V21c1.6,1.2,3.6,1.9,5.7,1.9V15.1z" />
+          </svg>
+        </a>
+
+
+        <a href="https://www.instagram.com/raqmyon_sa?igsh=dG00NHkwbXNydDV2" target="_blank" class="social-icon group">
+          <svg viewBox="0 0 24 24" class="group-hover:scale-110 transition-transform">
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z" />
+          </svg>
+        </a>
+      </div>
+
+      <p id="copyright" class="text-sm opacity-75" style="margin-bottom: 32px;">© 2024 Raqamyon. جميع الحقوق محفوظة</p>
+    </div>
+  </footer>
+  <script src="index.js"></script>
+</body>
+
+</html>

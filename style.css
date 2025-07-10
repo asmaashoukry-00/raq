@@ -1,0 +1,300 @@
+/* Start: Logo Style */
+.logo {
+    width: 130px;
+}
+/* End: Logo Style */
+/* extra */
+
+#video-content .headline,
+h2 {
+    padding-bottom: 5px; 
+    padding-top: 20px;
+}
+/* #headline, #video-headline {
+    transition: opacity 0.5s ease-in-out;
+} */
+body {
+background-color : white ;
+}
+/* Start: Video Content Style */
+#video-content {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+#video-content video {
+    object-fit: contain;
+    max-width: 100vw; 
+    max-height: 80vh; 
+    margin: 20px;
+}
+
+/* Media Queries for Tablets and Mobiles */
+@media (max-width: 1024px) {
+    #video-content video {
+        max-width: 100vw; /* Larger video on tablets */
+        max-height: 80vh;
+        margin-top: 0;
+        margin-left: 10px;
+        
+    }
+    .headline{
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    #video-content video {
+        max-width: 90vw; /* Even larger on mobile phones */
+        max-height: 70vh;
+        margin-top: 0;
+        margin-left: 10px;
+    }
+    .headline{
+        margin-top: 10px;
+    }
+   
+ 
+    
+}
+/* End: Video Content Style */
+
+/* Start: Font Face */
+@font-face {
+    font-family: 'Graphik Arabic';
+    src: url('https://fonts.cdnfonts.com/css/graphik-arabic') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Graphik Arabic', sans-serif;
+    background-color: #f8fafc;
+    overflow-x: hidden;
+}
+/* End: Font Face */
+
+/* Start: Hero Video Style */
+.hero-video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: brightness(0.5);
+}
+/* End: Hero Video Style */
+
+/* Start: Navbar Style */
+.navbar {
+    background: linear-gradient(90deg, #35155d, #5e2a8c);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.navbar a {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #e2e8f0;
+    transform: scale(1.05);
+}
+/* End: Navbar Style */
+
+/* Start: Sticky CTA Style */
+.sticky-cta {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 50;
+}
+/* End: Sticky CTA Style */
+
+/* Start: Card Style */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+/* End: Card Style */
+
+/* Start: Form Container Style */
+.form-container {
+    background: linear-gradient(135deg, #35155d, #5e2a8c);
+    border-radius: 24px;
+    padding: 3rem;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+    animation: rotateGradient 15s linear infinite;
+    z-index: 0;
+}
+
+@keyframes rotateGradient {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.form-container input,
+.form-container select {
+    background-color: rgba(255, 255, 255, 0.97);
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+    z-index: 1;
+    position: relative;
+}
+
+.form-container input:focus,
+.form-container select:focus {
+    outline: none;
+    border-color: #35155d;
+    box-shadow: 0 0 12px rgba(53, 21, 93, 0.5);
+}
+
+.form-container button {
+    background: linear-gradient(90deg, #6b7280, #4b5563);
+    color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
+    position: relative;
+}
+
+.form-container button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+/* End: Form Container Style */
+
+/* Start: Theme Styles */
+.theme-bg {
+    background-color: #35155d;
+}
+
+.theme-text {
+    color: #35155d;
+}
+/* End: Theme Styles */
+
+/* Start: Section Title Style */
+.section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: 0;
+    width: 80px;
+    height: 5px;
+    background: linear-gradient(90deg, #35155d, #5e2a8c);
+    border-radius: 3px;
+}
+/* End: Section Title Style */
+
+/* Start: Headline Animation Style */
+/* .headline {
+    opacity: 0;
+    animation: fadeInOut 4s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+} */
+/* End: Headline Animation Style */
+
+/* Start: CTA Button Style */
+.cta-button {
+    background: linear-gradient(90deg, #6b7280, #4b5563);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+/* End: CTA Button Style */
+
+/* Start: Menu Toggle Style */
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.nav-links {
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background: rgba(53, 21, 93, 0.95);
+        padding: 1rem;
+        flex-direction: column;
+        text-align: left;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .nav-links a {
+        margin: 0.5rem;
+        font-size: 1.2rem;
+    }
+}
+/* End: Menu Toggle Style */
+
