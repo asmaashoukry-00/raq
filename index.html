@@ -537,7 +537,7 @@
       <p class="text-lg mb-8 max-w-2xl mx-auto">
         لا تنتظر لين السوق ينساك. ابدأ معنا، وخلي منتجك يبيع زي ما يستاهل.
       </p>
-      <form action="https://hook.eu2.make.com/7owm42nkyok4529ohd85kp95mcduq66l" method="POST" class="form-container">
+      <form action="" method="POST" class="form-container">
         <input type="text" name="الاسم الكامل" placeholder="الاسم الكامل" class="w-full p-4 mb-4 rounded-lg" required />
         <input type="tel" name="رقم الهاتف" placeholder="رقم الهاتف" class="w-full p-4 mb-4 rounded-lg" required />
         <input type="email" name="البريد الإلكتروني" placeholder="البريد الإلكتروني" class="w-full p-4 mb-4 rounded-lg"
@@ -554,6 +554,33 @@
           احجز مكالمتك المجانية الآن
         </button>
       </form>
+
+      <!-- ✅ سكربت بدون تنبيهات -->
+      <script>
+        document.querySelector(".form-container").addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          fetch("https://script.google.com/macros/s/AKfycbyaVvc-Q9i_HfdbQdh1QuWVVfD8BUzKs3luiH1WBRdXbLO2WUWx-8UwV7SBodhabkK_/exec", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              "الاسم الكامل": document.querySelector("[name='الاسم الكامل']").value,
+              "رقم الهاتف": document.querySelector("[name='رقم الهاتف']").value,
+              "البريد الإلكتروني": document.querySelector("[name='البريد الإلكتروني']").value,
+              "نوع العمل": document.querySelector("[name='نوع العمل']").value
+            })
+          }).then(response => {
+            if (response.ok) {
+              document.querySelector(".form-container").reset();
+            }
+          }).catch(error => {
+            console.error("Error:", error);
+          });
+        });
+      </script>
+
 
     </div>
   </section>
