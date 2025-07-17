@@ -537,49 +537,30 @@
       <p class="text-lg mb-8 max-w-2xl mx-auto">
         لا تنتظر لين السوق ينساك. ابدأ معنا، وخلي منتجك يبيع زي ما يستاهل.
       </p>
-      <form action="" method="POST" class="form-container">
-        <input type="text" name="الاسم الكامل" placeholder="الاسم الكامل" class="w-full p-4 mb-4 rounded-lg" required />
-        <input type="tel" name="رقم الهاتف" placeholder="رقم الهاتف" class="w-full p-4 mb-4 rounded-lg" required />
-        <input type="email" name="البريد الإلكتروني" placeholder="البريد الإلكتروني" class="w-full p-4 mb-4 rounded-lg"
-          required />
+     <form action="https://docs.google.com/forms/d/e/1FAIpQLSeL3i8q1PxzkUhWYQ-bamf7HkZKWHtuacYyYm0I3MOq-DqfBA/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true" class="form-container">
+  
+  <input type="text" name="entry.1130096409" placeholder="الاسم الكامل" class="w-full p-4 mb-4 rounded-lg" required />
+  
+  <input type="tel" name="entry.2027813073" placeholder="رقم الهاتف" class="w-full p-4 mb-4 rounded-lg" required />
+  
+  <input type="email" name="entry.1636036322" placeholder="البريد الإلكتروني" class="w-full p-4 mb-4 rounded-lg" required />
+  
+  <select name="entry.1840820467" class="w-full p-4 mb-4 rounded-lg" required>
+    <option value="" disabled selected>نوع العمل</option>
+    <option value="التجارة الإلكترونية">التجارة الإلكترونية</option>
+    <option value="الخدمات">الخدمات</option>
+    <option value="أخرى">أخرى</option>
+  </select>
+  
+  <button type="submit" class="w-full bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold">
+    احجز مكالمتك المجانية الآن
+  </button>
+</form>
 
-        <select name="نوع العمل" class="w-full p-4 mb-4 rounded-lg" required>
-          <option value="" disabled selected>نوع العمل</option>
-          <option value="التجارة الإلكترونية">التجارة الإلكترونية</option>
-          <option value="الخدمات">الخدمات</option>
-          <option value="أخرى">أخرى</option>
-        </select>
+<!-- iframe مخفي علشان يمنع الانتقال لصفحة Google Form -->
+<iframe name="hidden_iframe" style="display:none;"></iframe>
 
-        <button type="submit" class="w-full bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold">
-          احجز مكالمتك المجانية الآن
-        </button>
-      </form>
-
-      <!-- ✅ سكربت بدون تنبيهات -->
-      <script>
-        document.querySelector(".form-container").addEventListener("submit", function (e) {
-          e.preventDefault();
-
-          fetch("https://script.google.com/macros/s/AKfycbyaVvc-Q9i_HfdbQdh1QuWVVfD8BUzKs3luiH1WBRdXbLO2WUWx-8UwV7SBodhabkK_/exec", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-              "الاسم الكامل": document.querySelector("[name='الاسم الكامل']").value,
-              "رقم الهاتف": document.querySelector("[name='رقم الهاتف']").value,
-              "البريد الإلكتروني": document.querySelector("[name='البريد الإلكتروني']").value,
-              "نوع العمل": document.querySelector("[name='نوع العمل']").value
-            })
-          }).then(response => {
-            if (response.ok) {
-              document.querySelector(".form-container").reset();
-            }
-          }).catch(error => {
-            console.error("Error:", error);
-          });
-        });
-      </script>
+     
 
 
     </div>
