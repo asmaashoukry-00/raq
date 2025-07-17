@@ -15,141 +15,141 @@
 
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="./imgs/favicon.png">
-  </head>
-  <style>
-    .theme-bg {
-      background: linear-gradient(135deg, #35155d 0%, #5e2a8c 100%);
-    }
+</head>
+<style>
+  .theme-bg {
+    background: linear-gradient(135deg, #35155d 0%, #5e2a8c 100%);
+  }
 
-    .logo {
-      width: 150px;
-      height: auto;
-    }
+  .logo {
+    width: 150px;
+    height: auto;
+  }
 
-    .social-icon {
-      width: 40px;
-      height: 40px;
-      background: rgba(255, 255, 255, 0.1);
-      border: 2px solid rgba(255, 255, 255, 0.2);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(10px);
-    }
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
 
-    .social-icon:hover {
-      background: rgba(255, 255, 255, 0.2);
-      border-color: rgba(255, 255, 255, 0.4);
-      transform: translateY(-2px);
-    }
+  .social-icon:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+  }
 
-    .social-icon svg {
-      width: 20px;
-      height: 20px;
-      fill: white;
-    }
+  .social-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
+  }
 
-    .theme-text {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+  .theme-text {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 
-    .marquee-container {
-      overflow: hidden;
-      white-space: nowrap;
-      /* width: 200%; */
-    }
+  .marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    /* width: 200%; */
+  }
 
-    .marquee-track {
-      display: flex;
-      animation: scroll 50s linear infinite normal;
-      width: fit-content;
-      /* animation-fill-mode: forwards; */
+  .marquee-track {
+    display: flex;
+    animation: scroll 50s linear infinite normal;
+    width: fit-content;
+    /* animation-fill-mode: forwards; */
 
 
-    }
+  }
 
   /* .marquee-track:hover {
       animation-play-state: paused;
     } */
 
-    @keyframes scroll {
-      0% {
-        transform: translateX(100%);
-      }
-
-      300% {
-        transform: translateX(-1%);
-      }
+  @keyframes scroll {
+    0% {
+      transform: translateX(100%);
     }
 
-    .client-logo {
-      flex-shrink: 0;
-      width: 256px;
-      height: 192px;
-      margin: 0 12px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
+    300% {
+      transform: translateX(-1%);
+    }
+  }
+
+  .client-logo {
+    flex-shrink: 0;
+    width: 256px;
+    height: 192px;
+    margin: 0 12px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .client-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .marquee-track::after {
+    content: '';
+    display: inline;
+    width: 100%;
+  }
+
+  /* الحركة المستمرة */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
     }
 
-    .client-logo img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
+    100% {
+      transform: translateX(-100%);
     }
+  }
 
-    .marquee-track::after {
-      content: '';
-      display: inline;
-      width: 100%;
-    }
+  .animate-marquee {
+    display: flex;
+    animation: marquee 300s linear infinite;
+  }
 
-    /* الحركة المستمرة */
-    @keyframes marquee {
-      0% {
-        transform: translateX(0%);
-      }
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
 
-      100% {
-        transform: translateX(-100%);
-      }
-    }
+  .animate-marquee:active {
+    animation-play-state: paused;
+  }
 
-    .animate-marquee {
-      display: flex;
-      animation: marquee 300s linear infinite;
-    }
+  .video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
 
-    .animate-marquee:hover {
-      animation-play-state: paused;
-    }
-
-    .animate-marquee:active {
-      animation-play-state: paused;
-    }
-
-    .video-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-    }
-
-    .beg-video {
-      max-width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
-  </style>
+  .beg-video {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+</style>
 </head>
 
 <body>
@@ -176,8 +176,7 @@
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between h-full">
       <div class="w-full md:w-1/2 md:order-first mb-8 md:mb-0 md:pr-16 text-center md:text-right">
         <!-- <h2 id="video-headline" class="text-3xl md:text-4xl font-bold mb-6 headline theme-text"></h2> -->
-         <h2 class="text-3xl md:text-4xl font-bold mb-6  theme-text"
-         >شركات جت بعدكم وتعدتكم؟ الزبدة بالتسويق.</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6  theme-text">شركات جت بعدكم وتعدتكم؟ الزبدة بالتسويق.</h2>
         <p class="text-lg md:text-xl text-gray-600 leading-relaxed">
           نخلي منتجك يوصل للناس اللي تشتري, مو بس تشوف.
         </p>
@@ -325,7 +324,7 @@
   <section id="clients" class="py-20 px-4 bg-gray-100">
     <div class="max-w-7xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 theme-text section-title">
-       من عملائنا 
+        من عملائنا
       </h2>
       <div class="overflow-hidden bg-white rounded-2xl shadow-lg mb-8 p-4">
         <div class="marquee-container">
@@ -476,7 +475,8 @@
         <!-- Video 3 -->
         <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden">
           <div class="aspect-video bg-gray-200 flex items-center justify-center">
-            <video class="w-full h-full object-cover" controls autoplay loop muted controls poster="./imgs/السويد (2).png">
+            <video class="w-full h-full object-cover" controls autoplay loop muted controls
+              poster="./imgs/السويد (2).png">
               <source src="./imgs/فديو3-السويد.mp4" type="video/mp4" />
               المتصفح لا يدعم عرض الفيديو
             </video>
@@ -537,25 +537,30 @@
       <p class="text-lg mb-8 max-w-2xl mx-auto">
         لا تنتظر لين السوق ينساك. ابدأ معنا، وخلي منتجك يبيع زي ما يستاهل.
       </p>
-      <div class="form-container">
-        <input type="text" placeholder="الاسم الكامل" class="w-full p-4 mb-4 rounded-lg" required />
-        <input type="tel" placeholder="رقم الهاتف" class="w-full p-4 mb-4 rounded-lg" required />
-        <input type="email" placeholder="البريد الإلكتروني" class="w-full p-4 mb-4 rounded-lg" required />
-        <select class="w-full p-4 mb-4 rounded-lg" required>
+      <form action="https://formsubmit.co/asmaashoukry099@gmail.com" method="POST" class="form-container">
+        <input type="text" name="الاسم الكامل" placeholder="الاسم الكامل" class="w-full p-4 mb-4 rounded-lg" required />
+        <input type="tel" name="رقم الهاتف" placeholder="رقم الهاتف" class="w-full p-4 mb-4 rounded-lg" required />
+        <input type="email" name="البريد الإلكتروني" placeholder="البريد الإلكتروني" class="w-full p-4 mb-4 rounded-lg"
+          required />
+
+        <select name="نوع العمل" class="w-full p-4 mb-4 rounded-lg" required>
           <option value="" disabled selected>نوع العمل</option>
-          <option value="ecommerce">التجارة الإلكترونية</option>
-          <option value="services">الخدمات</option>
-          <option value="other">أخرى</option>
+          <option value="التجارة الإلكترونية">التجارة الإلكترونية</option>
+          <option value="الخدمات">الخدمات</option>
+          <option value="أخرى">أخرى</option>
         </select>
-        <a href="https://wa.me/966547200939"><button class="w-full text-white px-8 py-4 rounded-lg text-lg font-semibold" >
+
+        <button type="submit" class="w-full bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold">
           احجز مكالمتك المجانية الآن
-        </button></a>
-      </div>
+        </button>
+      </form>
+
     </div>
   </section>
 
   <div class="sticky-cta">
-    <a href="https://wa.me/966547200939" class="cta-button text-white px-6 py-3 rounded-lg text-lg font-semibold">احجز مكالمتك
+    <a href="https://wa.me/966547200939" class="cta-button text-white px-6 py-3 rounded-lg text-lg font-semibold">احجز
+      مكالمتك
       المجانية</a>
   </div>
 
@@ -563,8 +568,8 @@
   <footer class="py-12 px-4 theme-bg text-white text-center">
     <div class="max-w-7xl mx-auto">
       <img src="./imgs/logo.png" alt="Raqamyon Logo" class="logo mx-auto mb-6" />
-      <p class="mb-6">اتصل بنا: 
- Info@Raqmyon.com | 966547200939</p>
+      <p class="mb-6">اتصل بنا:
+        Info@Raqmyon.com | 966547200939</p>
 
       <div class="flex justify-center items-center gap-4 mb-4">
         <a href="https://wa.me/966547200939" target="_blank" class="social-icon group">
