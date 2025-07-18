@@ -14,7 +14,7 @@ h2 {
     transition: opacity 0.5s ease-in-out;
 } */
 body {
-background-color : white ;
+background: #fff;
 }
 /* Start: Video Content Style */
 #video-content {
