@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>شكرًا لتواصلك معنا</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="./imgs/favicon.png">
+
+  <style>
+    body {
+      font-family: 'Graphik Arabic', sans-serif;
+      background: linear-gradient(135deg, #35155d, #5e2a8c); 
+    }
+
+    .thank-box {
+      background-color: #f3f4f6; 
+    }
+
+    .cta-button {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      color: #35155d;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center px-4">
+
+  <div class="thank-box shadow-lg rounded-xl p-8 max-w-md w-full text-center">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4">شكرًا لتواصلك معنا!</h1>
+    <p class="text-md text-gray-700 mb-6">
+      تم استلام طلبك بنجاح.<br />
+      فريقنا بيتواصل معاك بأقرب وقت.
+    </p>
+
+    <div class="flex flex-col gap-3 items-center">
+      <a href="https://wa.me/966547200939"
+         class="cta-button bg-green-600 hover:bg-green-700 text-white inline-flex items-center gap-2">
+         <i class="fa-brands fa-whatsapp text-lg"></i>
+         تواصل معنا
+      </a>
+
+      <a href="/index.html"
+         class="cta-button bg-gray-700 hover:bg-gray-800 text-white">
+         العودة للصفحة الرئيسية
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -637,7 +637,7 @@
 
 
   </footer>
-  <script>
+ <script>
   const form = document.getElementById("myForm");
 
   form.addEventListener("submit", async (e) => {
@@ -661,10 +661,11 @@
 
     } catch (error) {
       console.error("Error:", error);
-      alert("حدث خطأ أثناء الإرسال. الرجاء المحاولة لاحقًا.");
+      window.location.href = "thanks.html";
     }
   });
 </script>
+
 
 </body>
 
