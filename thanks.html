@@ -21,8 +21,13 @@
     .cta-button {
       padding: 0.75rem 1.5rem;
       font-size: 1rem;
-      border-radius: 0.5rem;
-      transition: all 0.3s ease;
+      /* transition: all 0.3s ease; */
+      background: linear-gradient(90deg, #6b7280, #4b5563);
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .whatsapp-btn{
+        background: linear-gradient(90deg, #5db079, #3ba521);
     }
 
     .cta-button:hover {
@@ -47,7 +52,7 @@
 
     <div class="flex flex-col gap-3 items-center">
       <a href="https://wa.me/966547200939"
-         class="cta-button bg-green-600 hover:bg-green-700 text-white inline-flex items-center gap-2">
+         class="cta-button whatsapp-btn  hover:bg-green-700 text-white inline-flex items-center gap-2">
          <i class="fa-brands fa-whatsapp text-lg"></i>
          تواصل معنا
       </a>
