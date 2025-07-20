@@ -9,6 +9,14 @@
     <link rel="icon" href="./imgs/favicon.png">
 
   <style>
+    .theme-text {
+    background: linear-gradient( #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    padding-bottom: 5px;
+    
+  }
     body {
       font-family: 'Graphik Arabic', sans-serif;
       background: linear-gradient(135deg, #35155d, #5e2a8c); 
@@ -21,7 +29,6 @@
     .cta-button {
       padding: 0.75rem 1.5rem;
       font-size: 1rem;
-      /* transition: all 0.3s ease; */
       background: linear-gradient(90deg, #6b7280, #4b5563);
     border-radius: 12px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -29,22 +36,23 @@
     .whatsapp-btn{
         background: linear-gradient(90deg, #5db079, #3ba521);
     }
+    
 
     .cta-button:hover {
       transform: translateY(-3px);
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     }
 
-    h1 {
+    /* h1 {
       color: #35155d;
-    }
+    } */
   </style>
 </head>
 
 <body class="min-h-screen flex items-center justify-center px-4">
 
   <div class="thank-box shadow-lg rounded-xl p-8 max-w-md w-full text-center">
-    <h1 class="text-3xl md:text-4xl font-bold mb-4">شكرًا لتواصلك معنا!</h1>
+    <h1 class="theme-text text-3xl md:text-4xl  font-bold mb-4">شكرًا لتواصلك معنا!</h1>
     <p class="text-md text-gray-700 mb-6">
       تم استلام طلبك بنجاح.<br />
       فريقنا بيتواصل معاك بأقرب وقت.
