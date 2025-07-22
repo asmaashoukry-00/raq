@@ -47,7 +47,7 @@
 /* Function to toggle the navigation menu */
 function toggleMenu() {
   const navLinks = document.querySelector(".nav-links");
-  navLinks.classList.toggle("active");
+  navLinks.classList.toggle("hidden");
 }
 
 const track = document.querySelector(".marquee-track");
