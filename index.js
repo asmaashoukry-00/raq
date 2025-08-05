@@ -45,12 +45,33 @@
 // });
 
 /* Function to toggle the navigation menu */
-function toggleMenu() {
-  const navLinks = document.querySelector(".nav-links");
-  navLinks.classList.toggle("hidden");
-}
+ 
+//   const menuButton = document.getElementById('menu-button');
+// const navLinks = document.getElementById('nav-links');
 
-const track = document.querySelector(".marquee-track");
-const template = document.getElementById("clients-logos").content;
-track.appendChild(template.cloneNode(true));
-track.appendChild(template.cloneNode(true));
+// if (menuButton && navLinks) {
+//   menuButton.addEventListener('click', () => {
+//     navLinks.classList.toggle('hidden');
+//     menuButton.classList.toggle('active'); 
+//   });
+
+//   document.addEventListener('click', (event) => {
+//     if (!navLinks.contains(event.target) && !menuButton.contains(event.target)) {
+//       navLinks.classList.add('hidden');
+//       menuButton.classList.remove('active'); 
+//     }
+//   });
+// }
+const menuButton = document.getElementById('menu-button');
+const navLinksMobile = document.getElementById('nav-links-mobile');
+
+menuButton.addEventListener('click', () => {
+    navLinksMobile.classList.toggle('hidden');
+    menuButton.textContent = navLinksMobile.classList.contains('hidden') ? '☰' : '✕';
+});
+
+
+// const track = document.querySelector(".marquee-track");
+// const template = document.getElementById("clients-logos").content;
+// track.appendChild(template.cloneNode(true));
+// track.appendChild(template.cloneNode(true));
